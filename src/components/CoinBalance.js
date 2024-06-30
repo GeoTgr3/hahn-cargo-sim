@@ -5,7 +5,7 @@ function CoinBalance() {
     const [balance, setBalance] = useState(0);
 
     useEffect(() => {
-        axios.get('/User/CoinAmount', {
+        axios.get('https://localhost:7115/User/CoinAmount', {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }

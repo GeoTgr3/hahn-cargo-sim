@@ -9,7 +9,7 @@ function Login() {
 
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:5115/User/Login', {
+            const response = await axios.post('https://localhost:7115/User/Login', {
                 username,
                 password
             }, {
