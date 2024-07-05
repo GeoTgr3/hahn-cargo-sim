@@ -14,10 +14,29 @@ function CoinBalance() {
         .catch(error => console.error(error));
     }, []);
 
+    // Inline styles
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontFamily: '"Arial", sans-serif', // Consistent font
+    };
+
+    const headingStyle = {
+        color: 'orange', // Theme color
+        margin: '20px 0', // Spacing
+    };
+
+    const balanceStyle = {
+        fontSize: '20px', // Larger font size for balance
+        color: 'black', // Color for balance text
+    };
+
     return (
-        <div>
-            <h2>Coin Balance</h2>
-            <p>{balance}</p>
+        <div style={containerStyle}>
+            <h2 style={headingStyle}>Coin Balance</h2>
+            <p style={balanceStyle}>{balance}</p>
         </div>
     );
 }

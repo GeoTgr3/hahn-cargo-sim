@@ -1,16 +1,27 @@
 import React from 'react';
-import AcceptedOrders from './AcceptedOrders';
 import CoinBalance from './CoinBalance';
 import SimulationControl from './SimulationControl';
-import TransporterStatus from './TransporterStatus';
 
 function Dashboard() {
+    // Inline styles
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh', // Full viewport height
+        fontFamily: '"Arial", sans-serif', // Consistent font
+    };
+
+    const headingStyle = {
+        color: 'orange', // Theme color
+        margin: '20px 0', // Spacing
+    };
+
     return (
-        <div>
-            <h2>Dashboard</h2>
+        <div style={containerStyle}>
+            <h2 style={headingStyle}>Dashboard</h2>
             <SimulationControl />
-            <TransporterStatus />
-            <AcceptedOrders />
             <CoinBalance />
         </div>
     );

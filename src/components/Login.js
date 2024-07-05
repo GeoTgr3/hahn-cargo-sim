@@ -13,37 +13,63 @@ function Login() {
                 username,
                 password
             }, {
-                // Example of adding headers for CORS, if needed
                 headers: {
                     'Content-Type': 'application/json',
-                    // Add other headers here
                 },
-                withCredentials: true // Sends cookies if needed for CORS
+                withCredentials: true
             });
             localStorage.setItem('token', response.data.token);
             navigate('/dashboard');
-
         } catch (error) {
             console.error('Login failed:', error);
         }
     };
 
+    // Inline styles
+    const containerStyle = {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh', // Full viewport height
+        fontFamily: '"Arial", sans-serif', // Example font
+    };
+
+    const inputStyle = {
+        margin: '10px 0',
+        padding: '10px',
+        border: '1px solid orange',
+        borderRadius: '5px',
+    };
+
+    const buttonStyle = {
+        padding: '10px 20px',
+        border: 'none',
+        borderRadius: '5px',
+        backgroundColor: 'orange',
+        color: 'white',
+        cursor: 'pointer',
+        fontSize: '16px',
+    };
+
     return (
-        <div>
+        <div style={containerStyle}>
             <h2>Login</h2>
             <input
                 type="text"
                 placeholder="Username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                style={inputStyle}
             />
             <input
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                style={inputStyle}
             />
-            <button onClick={handleLogin}>Login</button>
+            <button onClick={handleLogin} style={buttonStyle}>Login</button>
         </div>
     );
 }
